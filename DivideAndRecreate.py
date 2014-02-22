@@ -30,6 +30,12 @@ def main():
   		thirdThirdEmboss = thirdThird.filter(ImageFilter.EMBOSS)
   		thirdThirdEmboss.save("images/thirdFilterEmboss.jpg")
   		
+  		finalImage = Image.new("RGB", (width, height))
+  		finalImage.paste(firstThirdBlur, (0, 0))
+  		finalImage.paste(secondThirdEdge, (first, 0))
+  		finalImage.paste(thirdThirdEmboss, (second, 0))
+  		finalImage.save("images/FinalImage.jpg")
+  		
 	
 	except:
 		print "Unable to complete an operation"
