@@ -29,7 +29,7 @@ def main():
   		thirdThird = original.crop((second, 0, width, height))
   		thirdThird.save("images/ThirdThird.jpg")
   		thirdThirdFilter = thirdThird.filter(ImageFilter.EDGE_ENHANCE)
-  		thirdThirdFilter.save("images/thirdThirdFilter.jpg")
+  		thirdThirdFilter.save("images/ThirdThirdFilter.jpg")
   		
   		finalImage = Image.new("RGB", (width, height))
   		finalImage.paste(firstThirdFilter, (0, 0))
