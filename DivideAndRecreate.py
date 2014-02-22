@@ -1,11 +1,14 @@
+# Brenna Blackwell
+# DivideAndRecreate.py
+# University of Arkansas CSCE Capstone II - Spring 2004
+
 import sys
 from PIL import Image, ImageFilter
 
 def main():
 
 	try:
-		original = Image.open("TestImage.jpg")
-		original.show()
+		original = Image.open("images/TestImage.jpg")
 		
   		width, height = original.size
   		oneThird = width / 3
@@ -13,19 +16,23 @@ def main():
   		second = first + oneThird
   		
   		firstThird = original.crop((0, 0, first, height))
-  		firstThird.show()
-  		firstThird.save("FirstThird.jpg")
+  		firstThird.save("images/FirstThird.jpg")
+  		firstThirdBlur = firstThird.filter(ImageFilter.BLUR)
+  		firstThirdBlur.save("images/FirstThirdBlur.jpg")
   		
   		secondThird = original.crop((first, 0, second, height))
-  		secondThird.show()
-  		secondThird.save("SecondThird.jpg")
-  		
+  		secondThird.save("images/SecondThird.jpg")
+  		secondThirdEdge = secondThird.filter(ImageFilter.EDGE_ENHANCE)
+  		secondThirdEdge.save("images/SecondThirdEdge.jpg")
+  		  		
   		thirdThird = original.crop((second, 0, width, height))
-  		thirdThird.show("ThirdThird.jpg")
+  		thirdThird.save("images/ThirdThird.jpg")
+  		thirdThirdEmboss = thirdThird.filter(ImageFilter.EMBOSS)
+  		thirdThirdEmboss.save("images/thirdFilterEmboss.jpg")
   		
 	
 	except:
-		print "Unable to load image"
+		print "Unable to complete an operation"
 
 
 
