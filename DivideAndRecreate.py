@@ -1,6 +1,7 @@
 # Brenna Blackwell
 # DivideAndRecreate.py
-# University of Arkansas CSCE Capstone II - Spring 2004
+# University of Arkansas 
+# CSCE Capstone II - Spring 2004
 
 import sys
 from PIL import Image, ImageFilter
@@ -17,23 +18,23 @@ def main():
   		
   		firstThird = original.crop((0, 0, first, height))
   		firstThird.save("images/FirstThird.jpg")
-  		firstThirdBlur = firstThird.filter(ImageFilter.BLUR)
-  		firstThirdBlur.save("images/FirstThirdBlur.jpg")
+  		firstThirdFilter = firstThird.filter(ImageFilter.BLUR)
+  		firstThirdFilter.save("images/FirstThirdFilter.jpg")
   		
   		secondThird = original.crop((first, 0, second, height))
   		secondThird.save("images/SecondThird.jpg")
-  		secondThirdEdge = secondThird.filter(ImageFilter.EDGE_ENHANCE)
-  		secondThirdEdge.save("images/SecondThirdEdge.jpg")
+  		secondThirdFilter = secondThird.filter(ImageFilter.EMBOSS)
+  		secondThirdFilter.save("images/SecondThirdFilter.jpg")
   		  		
   		thirdThird = original.crop((second, 0, width, height))
   		thirdThird.save("images/ThirdThird.jpg")
-  		thirdThirdEmboss = thirdThird.filter(ImageFilter.EMBOSS)
-  		thirdThirdEmboss.save("images/thirdFilterEmboss.jpg")
+  		thirdThirdFilter = thirdThird.filter(ImageFilter.EDGE_ENHANCE)
+  		thirdThirdFilter.save("images/thirdThirdFilter.jpg")
   		
   		finalImage = Image.new("RGB", (width, height))
-  		finalImage.paste(firstThirdBlur, (0, 0))
-  		finalImage.paste(secondThirdEdge, (first, 0))
-  		finalImage.paste(thirdThirdEmboss, (second, 0))
+  		finalImage.paste(firstThirdFilter, (0, 0))
+  		finalImage.paste(secondThirdFilter, (first, 0))
+  		finalImage.paste(thirdThirdFilter, (second, 0))
   		finalImage.save("images/FinalImage.jpg")
   		
 	
