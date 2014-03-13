@@ -10,14 +10,14 @@ Set Keyboard to US Layout:
 Install Pip:
 	Step 1: Install Pip Installer for Python 2 - sudo apt-get install python-pip
 	
+Install Python Dev Packages:
+	Step 1: Install python-dev for Python 2 - sudo apt-get install python-dev
+	
 Install Library for JPEG Support:
 	Step 1: Install libjpeg-dev - sudo apt-get install libjpeg-dev
 
 Install Library for PNG Support
 	Step 1: Install libz-dev - sudo apt-get install libz-dev
-
-Install Python Dev Packages:
-	Step 1: Install python-dev for Python 2 - sudo apt-get install python-dev
 	
 Install Pillow:
 	Step 1: Install Pillow - sudo pip install Pillow
