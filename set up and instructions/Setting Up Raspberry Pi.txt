@@ -22,7 +22,8 @@ Install Python Dev Packages:
 Install Pillow:
 	Step 1: Install Pillow - sudo pip install Pillow
 	
-Install MPICH:
+Install mpi4py:
+	Step 1: Install mpi4py - sudo pip install mpi4py
 
 
 If for whatever reason, you must reinstall a package:
