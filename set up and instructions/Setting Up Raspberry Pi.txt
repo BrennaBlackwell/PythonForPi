@@ -1,7 +1,12 @@
+Display Settings:
+
 Change config.txt for HDMI4Pi Display:
 	Step 1: Open config.txt file - sudo nano /boot/config.txt
 	Step 2: Delete all contents of config.txt file
 	Stem 3: Copy contents of provided config.txt file and paste into open file
+	
+
+Installing Necessary Software:
 
 Set Keyboard to US Layout:
 	Step 1: Open keyboard layout defaults file - sudo nano /etc/default/keyboard
@@ -28,3 +33,23 @@ Install mpi4py:
 
 If for whatever reason, you must reinstall a package:
 	Step 1: sudo pip install -I Pillow
+	
+
+Network Setup:
+
+Edit Network Interface File
+	Step 1: Open file in nano - sudo nano /etc/network/interfaces
+	Step 2: Copy contents of provided interfaces file, making sure to give each node a unique IP
+		For example, IP in file is 192.168.0.101, so for the next node, use 192.168.0.102
+	
+Edit Machine File - Head Node Instructions
+	Step 1: Open file in nano - sudo nano /home/pi/mpi_testing/machinefile
+	Step 2: Make sure the IP addresses for all other nodes are listed in the machine file
+	
+Edit Machine File - Leaf Nodes
+	Step 1: Open file in nano - sudo nano /home/pi/mpi_testing/machinefile
+	Step 2: Include only the IP address of the head node
+	
+SSH from One Node into Another:
+	Step 1: Use ssh command in terminal - ssh pi@192.168.0.02
+		No password should be necessary
