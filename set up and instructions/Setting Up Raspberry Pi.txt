@@ -51,5 +51,5 @@ Edit Machine File - Leaf Nodes
 	Step 2: Include only the IP address of the head node
 	
 SSH from One Node into Another:
-	Step 1: Use ssh command in terminal - ssh pi@192.168.0.02
+	Step 1: Use ssh command in terminal - ssh pi@192.168.0.102
 		No password should be necessary
