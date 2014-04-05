@@ -1,0 +1,34 @@
+Bill of Materials for a Four Node Raspberry Pi Cluster
+
+This document lists all of the materials you'll need for making a four node Raspberry Pi cluster them.
+
+Required Materials:
+
+4 x Raspberry Pi Model B Computers with 8GB NOOBS SD Card
+http://www.alliedelec.com/lp/120626/rasomodelb/
+
+1 x 5 Port Ethernet Switch
+http://www.bestbuy.com/site/5-port-gigabit-ethernet-switch/6840341.p?id=1093386322984&skuId=6840341&st=Ethernet%20Switch&cp=1&lp=5
+http://www.bestbuy.com/site/prosafe-ethernet-switch/3924016.p?id=1051384176800&skuId=3924016&st=Ethernet%20Switch&cp=1&lp=6
+http://www.bestbuy.com/site/5-port-10-100-mbps-fast-ethernet-switch/8845148.p?id=1218911733217&skuId=8845148&st=Ethernet%20Switch&cp=1&lp=2
+
+4 x 5 Volt USB Power Supply
+https://www.alliedelec.com/Search/ProductDetail.aspx?SKU=70232557
+
+4 x USB to Micro USB Cables
+https://www.alliedelec.com/Search/ProductDetail.aspx?SKU=70240887
+
+4 x Ethernet Cables
+http://amzn.com/B002JPPY78
+
+
+Optional Materials
+
+4 x PiBow Case for Raspberry Pi
+
+4 x PiBow Mounting Plate for Raspberry Pi
+
+1 x Mini HDMI Display
+
+1 x HDMI Cable
+http://amzn.com/B00474YRE0
