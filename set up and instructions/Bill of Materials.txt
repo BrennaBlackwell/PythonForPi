@@ -14,6 +14,7 @@ http://www.bestbuy.com/site/5-port-10-100-mbps-fast-ethernet-switch/8845148.p?id
 
 4 x 5 Volt USB Power Supply
 https://www.alliedelec.com/Search/ProductDetail.aspx?SKU=70232557
+http://www.adafruit.com/products/501
 
 4 x USB to Micro USB Cables
 https://www.alliedelec.com/Search/ProductDetail.aspx?SKU=70240887
@@ -25,10 +26,16 @@ http://amzn.com/B002JPPY78
 Optional Materials
 
 4 x PiBow Case for Raspberry Pi
+http://www.adafruit.com/products/1124
+http://www.adafruit.com/products/975
+http://www.adafruit.com/products/1123
+http://www.adafruit.com/products/1037
 
 4 x PiBow Mounting Plate for Raspberry Pi
+http://www.adafruit.com/products/1320
 
 1 x Mini HDMI Display
+http://www.adafruit.com/products/1033
 
 1 x HDMI Cable
 http://amzn.com/B00474YRE0
