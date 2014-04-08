@@ -12,7 +12,7 @@ http://www.bestbuy.com/site/5-port-gigabit-ethernet-switch/6840341.p?id=10933863
 http://www.bestbuy.com/site/prosafe-ethernet-switch/3924016.p?id=1051384176800&skuId=3924016&st=Ethernet%20Switch&cp=1&lp=6
 http://www.bestbuy.com/site/5-port-10-100-mbps-fast-ethernet-switch/8845148.p?id=1218911733217&skuId=8845148&st=Ethernet%20Switch&cp=1&lp=2
 
-4 x 5 Volt USB Power Supply
+4 x 1A at 5 Volt USB Power Supply
 https://www.alliedelec.com/Search/ProductDetail.aspx?SKU=70232557
 http://www.adafruit.com/products/501
 
