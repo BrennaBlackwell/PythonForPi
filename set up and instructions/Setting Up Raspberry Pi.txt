@@ -4,7 +4,7 @@ Change config.txt for HDMI4Pi Display:
 	Step 1: Open config.txt file - sudo nano /boot/config.txt
 	Step 2: Delete all contents of config.txt file
 	Stem 3: Copy contents of provided config.txt file and paste into open file
-	
+
 
 Installing Necessary Software:
 
@@ -14,26 +14,39 @@ Set Keyboard to US Layout:
 
 Install Pip:
 	Step 1: Install Pip Installer for Python 2 - sudo apt-get install python-pip
-	
+
 Install Python Dev Packages:
 	Step 1: Install python-dev for Python 2 - sudo apt-get install python-dev
-	
+
 Install Library for JPEG Support:
 	Step 1: Install libjpeg-dev - sudo apt-get install libjpeg-dev
 
 Install Library for PNG Support
 	Step 1: Install libz-dev - sudo apt-get install libz-dev
-	
+
 Install Pillow:
 	Step 1: Install Pillow - sudo pip install Pillow
-	
+
+Install MPICH:
+	Step 1: Create folder to put the MPICH data - mkdir mpich
+	Step 2: Navigate to the folder you just make - cd mpich-install
+	Step 3: Create folder to hold the MPICH install - mkdir install
+	Step 4: Create folder to hold the MPICH build - mkdir build
+	Step 5: Download the most recent table version - wget http:// www.mpich.org/static/downloads/3.0.4/mpich-3.0.4.tar.gz
+	Step 6: Unzip the installation file - tar xvfz mpich-3.0.4.tar.gz
+	Step 7: Navigate to the build directory - cd build
+	Step 8: Set the configure parameter to install MPICH to the install directory - /home/pi/mpich/mpich-3.0.4/configure -prefix=/home/pi/mpich/install
+	Step 9: Run the make file - make
+	Step 10: Run the install command - make install
+	Step 11: Add the bin directory to your PATH variable - export PATH = $ PATH:/home/pi/mpich/install/bin
+
 Install mpi4py:
 	Step 1: Install mpi4py - sudo pip install mpi4py
 
 
 If for whatever reason, you must reinstall a package:
 	Step 1: sudo pip install -I Pillow
-	
+
 
 Network Setup:
 
@@ -41,15 +54,17 @@ Edit Network Interface File
 	Step 1: Open file in nano - sudo nano /etc/network/interfaces
 	Step 2: Copy contents of provided interfaces file, making sure to give each node a unique IP
 		For example, IP in file is 192.168.0.101, so for the next node, use 192.168.0.102
-	
+
 Edit Machine File - Head Node Instructions
-	Step 1: Open file in nano - sudo nano /home/pi/mpi_testing/machinefile
-	Step 2: Make sure the IP addresses for all other nodes are listed in the machine file
-	
+	Step 1: Create mpi_testing directory - mkdir mpi_testing
+	Step 2: Create machine file in nano - sudo nano /home/pi/mpi_testing/machinefile
+	Step 3: Make sure the IP addresses for all other nodes are listed in the machine file
+
 Edit Machine File - Leaf Nodes
-	Step 1: Open file in nano - sudo nano /home/pi/mpi_testing/machinefile
-	Step 2: Include only the IP address of the head node
-	
+	Step 1: Create mpi_testing directory - mkdir mpi_testing
+	Step 2: Create machine file in nano - sudo nano /home/pi/mpi_testing/machinefile
+	Step 3: Include only the IP address of the head node
+
 SSH from One Node into Another:
 	Step 1: Use ssh command in terminal - ssh pi@192.168.0.102
 		No password should be necessary
