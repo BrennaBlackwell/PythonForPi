@@ -9,11 +9,10 @@ from PIL import Image, ImageFilter
 from mpi4py import MPI
 import colorsys
 from math import ceil
-
+import pickle
 
 comm = MPI.COMM_WORLD
 rank = comm.Get_rank()
-
 
 if rank == 0:
   original = Image.open("BadResearch.jpg")
@@ -23,32 +22,17 @@ if rank == 0:
   second = first + oneThird
 
   firstThird = original.crop((0, 0, first, height))
-  comm.Send(firstThird, dest = 1)
+  imageData = {
+		'pixels':firstThird.tobytes(),
+		'size':firstThird.size(), 
+		'mode':firstThird.mode()
+	      }
+  data = pickle.dump(imageData, open("save.p", "w"))
+  comm.send(data, dest = 1)
 
-  # secondThird = original.crop((first, 0, second, height))
-  # comm.Send(secondThird, dest = 2)
-  #
-  # thirdThird = original.crop((second, 0, width, height))
-  # comm.Send(thirdThird, dest = 3)
-
-elif rank == 1:
-  comm.Recv(firstThird, source = 0)
-  firstThirdFilter = firstThird.filter(ImageFilter.BLUR)
-  comm.Send(firstThirdFilter, dest = 0)
-
-# elif rank == 2:
-#   secondThirdFilter = secondThird.filter(ImageFilter.EMBOSS)
-#   comm.Send(secondThirdFilter, dest = 0)
-#
-# elif rank == 3:
-#   thirdThirdFilter = thirdThird.filter(ImageFilter.EDGE_ENHANCE)
-#   comm.Send(thirdThirdFilter, dest = 0)
-
-if rank == 0:
-  comm.Recv(firstThirdFilter, source = 1)
-  firstThirdFilter.save("FirstThirdFilter.jpg")
-  # finalImage = Image.new("RGB", (width, height))
-  # finalImage.paste(firstThirdFilter, (0, 0))
-  # finalImage.paste(secondThirdFilter, (first, 0))
-  # finalImage.paste(thirdThirdFilter, (second, 0))
-  # finalImage.save("images/ReseachResult.jpg")
+if rank == 1:
+  data = comm.recv(source = 0)
+  #imageData = data.get('imageData')
+  #firstThird = Image.frombytes(**imageDate)
+  #firstThirdFilter = firstThird.filter(ImageFilter.BLUR)
+  #firstThirdFilter.save("FirstThirdFilter.jpg")
