@@ -10,16 +10,17 @@ from mpi4py import MPI
 import colorsys
 from math import ceil
 import pickle
+import time
 
 comm = MPI.COMM_WORLD
 rank = comm.Get_rank()
 name = MPI.Get_processor_name()
-#size = MPI.COMM_WORLD.Get_size()
-#sys.stdout.write("Process %d of %d on %s.\n" % (rank, size, name))
 
 if rank == 0:
+  start_time = time.time()
+
   #Open original image and calculate the division of it
-  original = Image.open("BadResearch.jpg")
+  original = Image.open("/home/pi/images/BadResearch.jpg")
   width, height = original.size
   oneThird = width / 3
   first = 0 + oneThird
@@ -82,7 +83,9 @@ if rank == 0:
   finalImage.paste(firstThirdFilter, (0, 0))
   finalImage.paste(secondThirdFilter, (first, 0))
   finalImage.paste(thirdThirdFilter, (second, 0))
-  finalImage.save("FinalBadResearch.jpg")
+  finalImage.save("/home/pi/images/FinalBadResearch.jpg")
+
+  print time.time() - start_time, "seconds"
 
 if rank == 1:
   #Receive image portion from head node
