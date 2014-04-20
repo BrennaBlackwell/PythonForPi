@@ -6,6 +6,7 @@ Required Materials:
 
 4 x Raspberry Pi Model B Computers with 8GB NOOBS SD Card
 http://www.alliedelec.com/lp/120626/rasomodelb/
+(If you did not get a Pi that comes with a SD Card preinstalled with NOOBS, you can download the software at http://www.raspberrypi.org/downloads/)
 
 1 x 5 Port Ethernet Switch
 http://www.bestbuy.com/site/5-port-gigabit-ethernet-switch/6840341.p?id=1093386322984&skuId=6840341&st=Ethernet%20Switch&cp=1&lp=5
