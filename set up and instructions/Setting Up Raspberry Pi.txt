@@ -59,11 +59,15 @@ Edit Machine File - Head Node Instructions
 	Step 1: Create mpi_testing directory - mkdir mpi_testing
 	Step 2: Create machine file in nano - sudo nano /home/pi/mpi_testing/machinefile
 	Step 3: Make sure the IP addresses for all other nodes are listed in the machine file
+		Please note that any program which uses the MPI software to distribute tasks to other nodes will need to be executed from this directory
 
 Edit Machine File - Leaf Nodes
 	Step 1: Create mpi_testing directory - mkdir mpi_testing
 	Step 2: Create machine file in nano - sudo nano /home/pi/mpi_testing/machinefile
 	Step 3: Include only the IP address of the head node
+
+RSA Setup
+	Step 1: Write RSA setup instructions
 
 SSH from One Node into Another:
 	Step 1: Use ssh command in terminal - ssh pi@192.168.0.102
