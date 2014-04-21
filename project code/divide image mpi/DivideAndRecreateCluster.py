@@ -20,7 +20,8 @@ if rank == 0:
   start_time = time.time()
 
   #Open original image and calculate the division of it
-  original = Image.open("/home/pi/images/BadResearch.jpg")
+  #original = Image.open("/home/pi/images/syntspec.jpg")
+  original = Image.open("/home/pi/images/" + sys.argv[1])
   width, height = original.size
   oneThird = width / 3
   first = 0 + oneThird
@@ -83,7 +84,8 @@ if rank == 0:
   finalImage.paste(firstThirdFilter, (0, 0))
   finalImage.paste(secondThirdFilter, (first, 0))
   finalImage.paste(thirdThirdFilter, (second, 0))
-  finalImage.save("/home/pi/images/FinalBadResearch.jpg")
+  finalImage.save("/home/pi/images/FinalSyntSpec.jpg")
+  finalImage.save("/home/pi/divide_manipulate/results/" + sys.argv[1])
 
   print time.time() - start_time, "seconds"
 
