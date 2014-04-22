@@ -1,0 +1,50 @@
+Create directory on each pi that images can be stored and accessed by all group partners 
+I think /home/pi/images/ will work
+
+
+
+
+
+
+
+
+
+
+-----------------------------------------------------------------------
+Directories and their use/meaning
+-----------------------------------------------------------------------------
+
+/home/pi/images/
+All group memebers will be using this directory when sending images to and from pis. 
+
+/home/pi/algo2/transferedFiles/
+This is for my programs use only. It is to store *.sh files that are to be ran on the leaf node
+
+
+
+
+
+
+
+
+
+--------------------------------------------------------------------------------------
+Files and their use/meaning
+--------------------------------------------------------------------------------------
+
+
+
+distJobToNode.sh [file list] [leaf node ip address]
+This script takes in a list of files that it sends to the ip address given
+Will use to send out jobs of images to leaf node pis
+
+
+distOneFileToNode.sh [filename] [node ip address]
+
+
+distFileToAllNodes.sh [filename]
+Sends given file to all leafnodes. Leafnodes are hardcoded in script.
+Will use to send out files that will be needed by all nodes such as python image manipulation scripts. 
+
+
+
