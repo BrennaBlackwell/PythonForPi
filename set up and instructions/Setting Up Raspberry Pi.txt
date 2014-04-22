@@ -67,7 +67,10 @@ Edit Machine File - Leaf Nodes
 	Step 3: Include only the IP address of the head node
 
 RSA Setup
-	Step 1: Write RSA setup instructions
+	Step 1: Navigate to your home directory - cd ~
+  Step 2: Set the default location to store the key - ssh-keygen -t rsa –C “raspberrypi@raspberrypi”
+  Step 3: Enter a passphrase of your choice
+  Step 4: Pipe the RSA key into SSH to store it on the node - cat ~/.ssh/id_rsa.pub | ssh pi@192.168.1.162 "mkdir .ssh;cat >> .ssh/authorized_keys"
 
 SSH from One Node into Another:
 	Step 1: Use ssh command in terminal - ssh pi@192.168.0.102
